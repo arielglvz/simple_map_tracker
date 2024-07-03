@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/styles.css">
+  <script src="https://kit.fontawesome.com/d0eb814d50.js" crossorigin="anonymous"></script>
+  <title>Tracker</title>
+</head>
+<body>
+  <div class="App">
+    <div class="sidebar">
+      <div class="controller">
+        <div class="search">
+          <input type="text" name="search-input" id="search-input" class="search-input" placeholder="Torrance CA 90503">
+          <button class="search-btn">SEARCH</button>
+        </div>
+        <div class="filter">
+          <select class="country-dropdown" name="country" id="country">
+            <option value="us">United States of America</option>
+            <option value="ph">Philippines</option>
+            <option value="india">India</option>
+            <option value="singapore">Singapore</option>
+          </select>
+          <i class="fa-solid fa-filter filter-btn" onclick="hideShowHandler()"></i>
+        </div>
+      </div>
+      <div class="content-switch">
+        <div class="list-view view">
+          <p>List View</p>
+        </div>
+        <div class="map-view view">
+          <p>Map View</p>
+        </div>
+      </div>
+      <div class="display">
+        <p class="announcement">There are 10 locations near you</p>
+        <div class="locations">
+        <ul class="list">
+        </ul>
+      </div>
+      </div>
+      <!-- Filter Options -->
+       <div class="filter-div">
+        <p class="title-filter">Filters</p>
+        <ul class="filter-options">
+          <li class="option-items">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <p>Retail</p>
+          </li>
+          <li class="option-items">
+            <i class="fa-regular fa-building"></i>
+            <p>Outlet</p>
+          </li>
+          <li class="option-items">
+            <i class="fa-solid fa-industry"></i>
+            <p>Factory</p>
+          </li>
+          <li class="option-items">
+            <i class="fa-solid fa-bullhorn"></i>
+            <p>Promotion</p>
+          </li>
+        </ul>
+        <div class="close-div">
+          <button class="close-btn" onclick="hideShowHandler() ">CLOSE FILTERS</button>
+        </div>
+       </div>
+    </div>
+    <div class="map">
+      <img src="/assets/map/fake_map.jpg" alt="fake map">
+    </div>
+  </div>
+  <script src="./functions/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.App {
+  .sidebar {
+    .controller {
+      padding: 10px;
+  
+      .search {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+  
+        .search-input {
+          width: 100%;
+          padding: 10px;
+          font-size: 20px;
+          outline: none;
+  
+          &::placeholder {
+            color: #000;
+          }
+        }
+  
+        .search-btn {
+          padding: 0 20px;
+          border: 2px solid #214d61;
+          border-radius: 4px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+  
+      .filter {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+  
+        .country-dropdown {
+          width: 100%;
+          padding: 10px;
+          font-size: 20px;
+          outline: none;
+  
+  
+          option {
+  
+          }
+        }
+  
+        .filter-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 50px;
+          width: 60px;
+          border: 2px solid #214d61;
+          border-radius: 4px;
+          font-size: 13px;
+          color: #000;
+          cursor: pointer;
+        }
+      }
+    }
+  
+    .content-switch {
+      margin-bottom: 10px;
+      padding: 10px 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      background-color: #15283b;
+  
+      .view {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        p {
+          font-weight: 600;
+        }
+      }
+  
+      .list-view {
+        background-color: #fff;
+        color: #000;
+      }
+  
+      .map-view {
+        background-color: #214d61;
+        color: #fff;
+      }
+    }
+  
+    .display {
+      display: block;
+  
+      .announcement {
+        padding: 10px 5px;
+        font-size: smaller;
+        background-color: #214d61;
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+      }
+  
+      .locations {
+        /* padding: 10px; */
+        overflow-y: scroll;
+        width: 100%;
+        max-height: 580px;
+  
+        .list {
+          height: max-content;
+          padding: 10px;
+  
+          .item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+  
+            .open-time {
+              height: 100%;
+              width: 30%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+  
+              .fa-location-pin {
+                position: relative;
+                font-size: 35px;
+  
+                span {
+                  position: absolute;
+                  top: 20%;
+                  left: 35%;
+                  font-size: 13px;
+                  color: #fff;
+                }
+              }
+  
+                .text-container {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+  
+                  .open-until {
+                    font-size: 12px;
+                  }
+  
+                  .time {
+                    font-weight: 600;
+                  }
+                }
+            }
+  
+            .right-details {
+              width: 70%;
+              padding: 10px;
+              border-left: 3px solid #214d61;
+  
+              .loc-details {
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+  
+                div {
+                  .title {
+  
+                  }
+    
+                  .address {
+                    font-size: 12px;
+                  }
+                }
+              }
+  
+              .get-directions {
+                background-color: #214d61;
+                color: #fff;
+                padding: 10px;
+                width: 100%;
+                border: none;
+                font-weight: 600;
+                border-radius: 4px;
+                cursor: pointer;
+              }
+  
+            }
+            .fa-angle-right {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  
+    .filter-div {
+      display: none;
+  
+      .title-filter {
+        margin-bottom: 50px;
+        padding: 10px 20px;
+        font-size: smaller;
+        background-color: #214d61;
+        color: #fff;
+        text-align: left;
+        font-weight: 600;
+      }
+      
+      .filter-options {
+  
+        .option-items {
+          padding: 0 20px;
+          height: 70px;
+          width: 100%;
+          display: flex;
+          
+          
+          i {
+            margin-right: 20px;
+            font-size: large;
+            color: #214d61;
+          }
+  
+          p {
+            font-weight: 500;
+            font-size: larger;
+          }
+        }
+      }
+      
+      .close-div {
+        padding: 0 20px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+  
+        .close-btn {
+          background-color: #214d61;
+          color: #fff;
+          padding: 10px;
+          width: max-content;
+          border: none;
+          font-weight: 600;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.fa-phone {
+  color: #214d61;
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    
+    .map {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .App {
+    display: flex;
+    overflow: hidden;
+
+    .sidebar {
+      width: 500px;
+      max-width: 400px;
+      height: 100vh;
+      min-height: 500px;
+    }
+    
+    .map {
+      width: 100%;
+      height: 100vh;
+      min-height: 500px;
+      overflow: scroll;
+      cursor: grab;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
