@@ -271,7 +271,6 @@ html, body {
 
 @media only screen and (max-width: 600px) {
   .App {
-    
     .map {
       display: none;
     }
@@ -288,6 +287,10 @@ html, body {
       max-width: 400px;
       height: 100vh;
       min-height: 500px;
+
+      .content-switch {
+        display: none;
+      }
     }
     
     .map {
@@ -298,7 +301,7 @@ html, body {
       cursor: grab;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
-      img {
+      iframe {
         height: 100%;
         width: 100%;
       }
