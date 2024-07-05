@@ -301,6 +301,7 @@ html, body {
       cursor: grab;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
+      
       iframe {
         height: 100%;
         width: 100%;
