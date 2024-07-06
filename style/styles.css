@@ -38,6 +38,11 @@ html, body {
           border-radius: 4px;
           font-weight: 600;
           cursor: pointer;
+
+          &:hover {
+            background-color: #214d61;
+            color: #fff;
+          }
         }
       }
   
@@ -51,7 +56,6 @@ html, body {
           padding: 10px;
           font-size: 20px;
           outline: none;
-  
   
           option {
   
@@ -69,6 +73,11 @@ html, body {
           font-size: 13px;
           color: #000;
           cursor: pointer;
+
+          &:hover {
+           background-color: #214d61;
+           color: #fff; 
+          }
         }
       }
     }
@@ -87,6 +96,7 @@ html, body {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
   
         p {
           font-weight: 600;
@@ -130,7 +140,8 @@ html, body {
             display: flex;
             flex-direction: row;
             align-items: center;
-  
+            user-select: none;
+            
             .open-time {
               height: 100%;
               width: 30%;
@@ -138,10 +149,12 @@ html, body {
               flex-direction: column;
               align-items: center;
               justify-content: center;
+              gap: 10px;
   
               .fa-location-pin {
                 position: relative;
                 font-size: 35px;
+                color: #214d61;
   
                 span {
                   position: absolute;
@@ -149,7 +162,9 @@ html, body {
                   left: 35%;
                   font-size: 13px;
                   color: #fff;
+
                 }
+
               }
   
                 .text-container {
@@ -172,18 +187,20 @@ html, body {
               padding: 10px;
               border-left: 3px solid #214d61;
   
-              .loc-details {
-                margin-bottom: 10px;
+              .loc-details { 
                 display: flex;
                 align-items: center;
                 gap: 10px;
   
                 div {
+                  margin-bottom: 5px;
+
                   .title {
-  
+                    margin-bottom: 5px;
                   }
-    
+                  
                   .address {
+                    margin-bottom: 5px;
                     font-size: 12px;
                   }
                 }
@@ -210,10 +227,10 @@ html, body {
     }
   
     .filter-div {
+      padding-bottom: 20px;
       display: none;
   
       .title-filter {
-        margin-bottom: 50px;
         padding: 10px 20px;
         font-size: smaller;
         background-color: #214d61;
@@ -229,7 +246,7 @@ html, body {
           height: 70px;
           width: 100%;
           display: flex;
-          
+          align-items: center;
           
           i {
             margin-right: 20px;
@@ -240,6 +257,16 @@ html, body {
           p {
             font-weight: 500;
             font-size: larger;
+          }
+
+          &:hover {
+            background-color: #214d61;
+            color: #fff;
+            cursor: pointer;
+
+            i {
+              color: #fff;
+            }
           }
         }
       }
@@ -265,12 +292,28 @@ html, body {
   }
 }
 
+.map {
+  width: 100%;
+  iframe {
+    height: 100vh;
+    width: 100%;
+  }
+}
+
 .fa-phone {
   color: #214d61;
 }
 
 @media only screen and (max-width: 600px) {
   .App {
+    .sidebar {
+      .display {
+        .locations {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none; 
+        }
+      }
+    }
     .map {
       display: none;
     }
@@ -294,18 +337,11 @@ html, body {
     }
     
     .map {
-      width: 100%;
-      height: 100vh;
       min-height: 500px;
       overflow: scroll;
       cursor: grab;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
-      
-      iframe {
-        height: 100%;
-        width: 100%;
-      }
     }
   }
 }

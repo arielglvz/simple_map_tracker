@@ -71,12 +71,17 @@ const locationData = [
   },
 ]
 
-let usersContainer = document.querySelector(".list");
+let usersContainer = document.querySelector(".list")
 var filterDiv = document.querySelector('.filter-div')
 var filtertBtn = document.querySelector('.filter-btn')
 var displayDiv = document.querySelector('.display')
+var mapDisplay = document.querySelector('.map')
+var listView = document.querySelector('.list-view')
+var mapView = document.querySelector('.map-view')
 var display = 0;
+var content = 0;
 
+// Used .map() to instead of 
 const mappedUsers = locationData.map((item, index) => {
   return `<div class="item" key={${index}}>
             <div class="open-time">
@@ -92,7 +97,7 @@ const mappedUsers = locationData.map((item, index) => {
               <div class="loc-details">
                 <div>
                   <h4 class='title'>${item.title}</h4>
-                  <p clas='adddress'>${item.address}</p>
+                  <p class='address'>${item.address}</p>
                   <p><i class="fa-solid fa-phone"></i> ${item.contact}</p>
                 </div>
                 </div>
@@ -103,7 +108,6 @@ const mappedUsers = locationData.map((item, index) => {
 }).join('');
 
 function hideShowHandler() {
-  console.log('clicked')
   if(display === 1) {
     displayDiv.style.display = 'block'
     filterDiv.style.display = 'none'
@@ -112,6 +116,25 @@ function hideShowHandler() {
     displayDiv.style.display = 'none'
     filterDiv.style.display = 'block'
     display = 1;
+  }
+}
+
+  
+/*
+  switch for the content you want to show
+  1 for list mode 
+  0 for map view
+*/
+ 
+function contentHandler(num) {
+  if(num === 1) {
+    displayDiv.style.display = 'block'
+    mapDisplay.style.display = 'none'
+    content = 1;
+  } else {
+    displayDiv.style.display = 'none'
+    mapDisplay.style.display = 'block'
+    content = 0;
   }
 }
 
